@@ -3,6 +3,7 @@ package ru.simbirsoft.Prictice;
 import ru.simbirsoft.Prictice.Exception.NullPointer;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Service {
     private InterfaceURL url;
@@ -25,5 +26,24 @@ public class Service {
         System.out.println("Какие слова уникальные: " + textParse.uniqueWords()
                 + "\n Количество уникальных слов: "+ textParse.countUnique());
     }
+    public int getCountWords() throws NullPointer {
+        return textParse.countWord();
+    }
 
+    public int getUniqueWords() {
+        textParse.uniqueWords();
+        return textParse.countUnique();
+    }
+
+    public List<String> getRepeatedWord(){
+        return textParse.repeatedWords();
+    }
+//    public String getURL() {
+//        String host = url.stringPageURL()
+//                .replaceAll("http://|https://|www.|ws://|wss://","")
+//                .replaceAll("/.*","")
+//                .split(".com")[0];
+//
+//        return host;
+//    }
 }
