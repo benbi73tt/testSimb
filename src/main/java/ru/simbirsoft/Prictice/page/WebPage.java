@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
+@Table(name = "webpage")
 public class WebPage {
     @Id
     @Column(name = "id", nullable = false)
@@ -15,7 +16,7 @@ public class WebPage {
     private int id;
 
     @NotEmpty(message = "Name should not be empty")//нельзя пустое значение(Ошибка)
-    @Size(min = 6, max = 100, message = "Name should be between 2 and 12 characters")
+    @Size(min = 6, max = 100, message = "Name should be between 2 and 100 characters")
     @Column(name = "name")
     private String name;
 
@@ -29,6 +30,8 @@ public class WebPage {
 
     @Column(name = "uniqueWord")
     private int uniqueWord;
+
+    //сделать для uniqueword отдельную бд с колонками
 
     public String getUrl() {
         return url;

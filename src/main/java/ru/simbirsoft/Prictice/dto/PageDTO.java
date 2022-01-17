@@ -13,7 +13,7 @@ public class PageDTO {
     public static PageDTO from(WebPage webPage){
         PageDTO pageDTO = new PageDTO();
         pageDTO.setCountWord(webPage.getCountWord());
-//        pageDTO.setId(webPage.getId());
+        pageDTO.setId(webPage.getId());
         pageDTO.setName(webPage.getName());
         pageDTO.setUniqueWord(webPage.getUniqueWord());
         return pageDTO;

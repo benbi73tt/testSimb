@@ -38,12 +38,7 @@ public class Service {
     public List<String> getRepeatedWord(){
         return textParse.repeatedWords();
     }
-//    public String getURL() {
-//        String host = url.stringPageURL()
-//                .replaceAll("http://|https://|www.|ws://|wss://","")
-//                .replaceAll("/.*","")
-//                .split(".com")[0];
-//
-//        return host;
-//    }
+    public List<String> getUniqueWord(){
+        return textParse.uniqueWords();
+    }
 }

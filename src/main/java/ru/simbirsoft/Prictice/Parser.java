@@ -31,12 +31,14 @@ public class Parser implements InterfaceParser {
     }
 
     @Override
-    public List<Map.Entry<String, Integer>> uniqueWords() {
+    public List<String> uniqueWords() {
         if (counter.size() == 0) countingWords();
         return counter.entrySet().stream().filter((it) -> {
-                    countUnique++;
-                    return it.getValue() == 1;
-                }).collect(Collectors.toList());
+            countUnique++;
+            return it.getValue() == 1;
+        }).map(it -> {
+            return it.getKey();
+        }).collect(Collectors.toList());
     }
 
     @Override
@@ -53,7 +55,6 @@ public class Parser implements InterfaceParser {
     }
 
 
-
     @Override
     public int countWord() throws NullPointer {
         if (arr == null) {
@@ -61,6 +62,7 @@ public class Parser implements InterfaceParser {
         }
         return arr.length;
     }
+
     @Override
     public int countUnique() {
         return countUnique;

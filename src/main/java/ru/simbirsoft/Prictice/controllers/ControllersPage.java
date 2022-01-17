@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.simbirsoft.Prictice.Exception.InvalidURL;
 import ru.simbirsoft.Prictice.Exception.NullPointer;
 import ru.simbirsoft.Prictice.ListOfPages.PagesList;
+import ru.simbirsoft.Prictice.dto.PageDTO;
 import ru.simbirsoft.Prictice.dto.PagesListDTO;
 import ru.simbirsoft.Prictice.page.WebPage;
 import ru.simbirsoft.Prictice.service.ServicePage;
@@ -37,11 +38,22 @@ public class ControllersPage {
 
     @GetMapping("/page/{index}")
     public ResponseEntity getPageByIndex(@PathVariable int index) {
-        log.info("get pages by index" + index);
-        try{
-            return ResponseEntity.ok(servicePage.infoPage(index));
-        } catch (IndexOutOfBoundsException e){
+        log.info("get pages by index " + index);
+        try {
+//            return ResponseEntity.ok(servicePage.infoPage(index));
+            PageDTO dto = PageDTO.from(servicePage.infoPage(index));
+            return ResponseEntity.ok(dto);
+        } catch (IndexOutOfBoundsException e) {
             return ResponseEntity.notFound().build();
         }
     }
+
+    //переделать на другую бд
+//    @GetMapping("/unique-word/{index}")
+//    public ResponseEntity getUniqueWordByIndex(@PathVariable int index) {
+//        log.info("get unique word by index " + index);
+//
+//
+//    }
+
 }
