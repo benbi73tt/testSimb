@@ -2,13 +2,10 @@ package ru.simbirsoft.Prictice.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.simbirsoft.Prictice.*;
 import ru.simbirsoft.Prictice.Exception.InvalidURL;
 import ru.simbirsoft.Prictice.Exception.NullPointer;
-import ru.simbirsoft.Prictice.InterfaceParser;
-import ru.simbirsoft.Prictice.InterfaceURL;
 import ru.simbirsoft.Prictice.ListOfPages.PagesList;
-import ru.simbirsoft.Prictice.Parser;
-import ru.simbirsoft.Prictice.Reader;
 import ru.simbirsoft.Prictice.page.WebPage;
 
 import javax.persistence.EntityManager;
@@ -18,6 +15,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 @Service
 public class ServicePageImpl implements ServicePage {
@@ -41,6 +39,14 @@ public class ServicePageImpl implements ServicePage {
         }
     }
 
+    public ParsReaderService parsReaderService(String url) throws IOException {
+        InterfaceURL read = new Reader(url);
+        InterfaceParser parse = new Parser();
+        ParsReaderService service = new ParsReaderService(read, parse);
+        service.convert();
+        return service;
+    }
+
     @Override
     public PagesList getPage() {
         return pagesList;
@@ -50,10 +56,7 @@ public class ServicePageImpl implements ServicePage {
     @Transactional
     public void addPage(WebPage page) throws IOException, NullPointer, InvalidURL {
         if (verify(page.getUrl())) {
-            InterfaceURL read = new Reader(page.getUrl());
-            InterfaceParser parse = new Parser();
-            ru.simbirsoft.Prictice.Service service = new ru.simbirsoft.Prictice.Service(read, parse);
-            service.convert();
+            ParsReaderService service = parsReaderService(page.getUrl());
             page.setCountWord(service.getCountWords());
             page.setUniqueWord(service.getUniqueWords());
             page.setName(page.getUrl());
@@ -73,4 +76,22 @@ public class ServicePageImpl implements ServicePage {
     @Override
     public void deletePlayer(int id) {
     }
+
+    //todo В ТЗ не было указано для каких целей требуется полный список повторяющийхся слов,
+    // поэтому, я не знал стоит ли добавлять "Листы" в бд.
+
+    @Override
+    public List<String> repeatedWord(int id) throws IOException {
+        WebPage webPage = entityManager.find(WebPage.class, id);
+        ParsReaderService service = parsReaderService(webPage.getUrl());
+        return service.getRepeatedWord();
+    }
+
+    @Override
+    public List<String> uniqueWord(int id) throws IOException {
+        WebPage webPage = entityManager.find(WebPage.class, id);
+        ParsReaderService service = parsReaderService(webPage.getUrl());
+        return service.getUniqueWord();
+    }
+
 }

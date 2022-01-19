@@ -5,11 +5,11 @@ import ru.simbirsoft.Prictice.Exception.NullPointer;
 import java.io.IOException;
 import java.util.List;
 
-public class Service {
+public class ParsReaderService {
     private InterfaceURL url;
     private InterfaceParser textParse;
 
-    public Service(InterfaceURL read, InterfaceParser parse){
+    public ParsReaderService(InterfaceURL read, InterfaceParser parse){
         this.url = read;
         this.textParse = parse;
     }

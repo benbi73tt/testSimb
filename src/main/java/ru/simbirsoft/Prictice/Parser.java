@@ -34,7 +34,7 @@ public class Parser implements InterfaceParser {
     public List<String> uniqueWords() {
         if (counter.size() == 0) countingWords();
         return counter.entrySet().stream().filter((it) -> {
-            countUnique++;
+            if(it.getValue()==1) countUnique++;
             return it.getValue() == 1;
         }).map(it -> {
             return it.getKey();

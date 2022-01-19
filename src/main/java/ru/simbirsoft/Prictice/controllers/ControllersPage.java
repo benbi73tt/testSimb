@@ -49,11 +49,16 @@ public class ControllersPage {
     }
 
     //переделать на другую бд
-//    @GetMapping("/unique-word/{index}")
-//    public ResponseEntity getUniqueWordByIndex(@PathVariable int index) {
-//        log.info("get unique word by index " + index);
-//
-//
-//    }
+    @GetMapping("/unique-word/{index}")
+    public ResponseEntity getUniqueWordByIndex(@PathVariable int index) throws IOException {
+        log.info("get unique word by index " + index);
+        return ResponseEntity.ok(servicePage.uniqueWord(index));
+    }
+
+    @GetMapping("/repeated-word/{index}")
+    public ResponseEntity getRepeatedWordByIndex(@PathVariable int index) throws IOException {
+        log.info("get unique word by index " + index);
+        return ResponseEntity.ok(servicePage.repeatedWord(index));
+    }
 
 }

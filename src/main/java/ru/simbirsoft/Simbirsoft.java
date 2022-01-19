@@ -43,7 +43,7 @@ public class Simbirsoft {
         if (verify(websiteURL)) {
             InterfaceURL read = new Reader(websiteURL);
             InterfaceParser parse = new Parser();
-            Service service = new Service(read, parse);
+            ParsReaderService service = new ParsReaderService(read, parse);
             service.convert();
             service.getResult();
         } else

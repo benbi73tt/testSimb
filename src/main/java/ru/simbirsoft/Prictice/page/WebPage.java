@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-@Table(name = "webpage")
+//@Table(name = "webpage")
 public class WebPage {
     @Id
     @Column(name = "id", nullable = false)
@@ -30,6 +30,7 @@ public class WebPage {
 
     @Column(name = "uniqueWord")
     private int uniqueWord;
+
 
     //сделать для uniqueword отдельную бд с колонками
 
