@@ -1,5 +1,6 @@
 package ru.simbirsoft.Prictice.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.simbirsoft.Prictice.*;
@@ -17,6 +18,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
+@Slf4j
 @Service
 public class ServicePageImpl implements ServicePage {
 
@@ -33,8 +35,10 @@ public class ServicePageImpl implements ServicePage {
             conn.connect();
             return true;
         } catch (MalformedURLException e) {
+            log.error("MalformedURLException e");
             return false;
         } catch (IOException e) {
+            log.error("IOException e");
             return false;
         }
     }
@@ -60,8 +64,10 @@ public class ServicePageImpl implements ServicePage {
             page.setCountWord(service.getCountWords());
             page.setUniqueWord(service.getUniqueWords());
             page.setName(page.getUrl());
-        } else
+        } else{
+            log.info("InvalidURL");
             throw new InvalidURL("Неверный URL адрес");
+        }
         entityManager.persist(page);
     }
 
@@ -74,7 +80,10 @@ public class ServicePageImpl implements ServicePage {
     }
 
     @Override
+    @Transactional
     public void deletePlayer(int id) {
+        WebPage webPage = entityManager.find(WebPage.class, id);
+        entityManager.remove(webPage);
     }
 
     //todo В ТЗ не было указано для каких целей требуется полный список повторяющийхся слов,
@@ -93,5 +102,6 @@ public class ServicePageImpl implements ServicePage {
         ParsReaderService service = parsReaderService(webPage.getUrl());
         return service.getUniqueWord();
     }
+
 
 }

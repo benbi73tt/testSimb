@@ -44,6 +44,7 @@ public class ControllersPage {
             PageDTO dto = PageDTO.from(servicePage.infoPage(index));
             return ResponseEntity.ok(dto);
         } catch (IndexOutOfBoundsException e) {
+            log.error("IndexOutOfBoundsException e");
             return ResponseEntity.notFound().build();
         }
     }
@@ -59,6 +60,13 @@ public class ControllersPage {
     public ResponseEntity getRepeatedWordByIndex(@PathVariable int index) throws IOException {
         log.info("get unique word by index " + index);
         return ResponseEntity.ok(servicePage.repeatedWord(index));
+    }
+
+    @DeleteMapping("/page/{index}")
+    public ResponseEntity deletePlayerByIndex(@PathVariable int index) {
+        log.info("delete player by index " + index);
+        servicePage.deletePlayer(index);
+        return ResponseEntity.ok().build();
     }
 
 }
