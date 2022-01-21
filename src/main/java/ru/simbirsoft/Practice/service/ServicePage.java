@@ -1,9 +1,9 @@
-package ru.simbirsoft.Prictice.service;
+package ru.simbirsoft.Practice.service;
 
-import ru.simbirsoft.Prictice.Exception.InvalidURL;
-import ru.simbirsoft.Prictice.Exception.NullPointer;
-import ru.simbirsoft.Prictice.ListOfPages.PagesList;
-import ru.simbirsoft.Prictice.page.WebPage;
+import ru.simbirsoft.Practice.Exception.InvalidURL;
+import ru.simbirsoft.Practice.Exception.NullPointer;
+import ru.simbirsoft.Practice.ListOfPages.PagesList;
+import ru.simbirsoft.Practice.page.WebPage;
 
 import java.io.IOException;
 import java.util.List;

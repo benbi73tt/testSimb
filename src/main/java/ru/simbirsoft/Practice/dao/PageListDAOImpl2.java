@@ -1,22 +1,20 @@
-package ru.simbirsoft.Prictice.dao;
+package ru.simbirsoft.Practice.dao;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-import ru.simbirsoft.Prictice.Exception.InvalidURL;
-import ru.simbirsoft.Prictice.Exception.NoEntityException;
-import ru.simbirsoft.Prictice.Exception.NullPointer;
-import ru.simbirsoft.Prictice.URLprocessing.*;
-import ru.simbirsoft.Prictice.dao.repository.WebPageRepository;
-import ru.simbirsoft.Prictice.page.WebPage;
+import ru.simbirsoft.Practice.Exception.InvalidURL;
+import ru.simbirsoft.Practice.Exception.NullPointer;
+import ru.simbirsoft.Practice.URLprocessing.*;
+import ru.simbirsoft.Practice.dao.repository.WebPageRepository;
+import ru.simbirsoft.Practice.page.WebPage;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Primary

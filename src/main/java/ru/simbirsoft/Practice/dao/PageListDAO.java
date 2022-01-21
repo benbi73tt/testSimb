@@ -1,13 +1,11 @@
-package ru.simbirsoft.Prictice.dao;
+package ru.simbirsoft.Practice.dao;
 
-import ru.simbirsoft.Prictice.Exception.InvalidURL;
-import ru.simbirsoft.Prictice.Exception.NoEntityException;
-import ru.simbirsoft.Prictice.Exception.NullPointer;
-import ru.simbirsoft.Prictice.page.WebPage;
+import ru.simbirsoft.Practice.Exception.InvalidURL;
+import ru.simbirsoft.Practice.Exception.NullPointer;
+import ru.simbirsoft.Practice.page.WebPage;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 public interface PageListDAO {
     void addPage(WebPage page) throws IOException, NullPointer, InvalidURL;

@@ -1,8 +1,8 @@
 package ru.simbirsoft;
 
-import ru.simbirsoft.Prictice.Exception.InvalidURL;
-import ru.simbirsoft.Prictice.Exception.NullPointer;
-import ru.simbirsoft.Prictice.URLprocessing.*;
+import ru.simbirsoft.Practice.Exception.InvalidURL;
+import ru.simbirsoft.Practice.Exception.NullPointer;
+import ru.simbirsoft.Practice.URLprocessing.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

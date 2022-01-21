@@ -1,4 +1,4 @@
-package ru.simbirsoft.Prictice.URLprocessing;
+package ru.simbirsoft.Practice.URLprocessing;
 
 import java.io.BufferedReader;
 import java.io.IOException;

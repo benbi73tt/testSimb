@@ -1,4 +1,4 @@
-package ru.simbirsoft.Prictice.page;
+package ru.simbirsoft.Practice.page;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

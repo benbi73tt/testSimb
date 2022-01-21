@@ -1,9 +1,9 @@
-package ru.simbirsoft.Prictice.dto;
+package ru.simbirsoft.Practice.dto;
 
 
 import lombok.Data;
-import ru.simbirsoft.Prictice.ListOfPages.PagesList;
-import ru.simbirsoft.Prictice.page.WebPage;
+import ru.simbirsoft.Practice.ListOfPages.PagesList;
+import ru.simbirsoft.Practice.page.WebPage;
 
 import java.util.List;
 

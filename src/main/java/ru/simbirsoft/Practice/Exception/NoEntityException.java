@@ -1,4 +1,4 @@
-package ru.simbirsoft.Prictice.Exception;
+package ru.simbirsoft.Practice.Exception;
 
 public class NoEntityException extends Exception{
  public NoEntityException(String message){

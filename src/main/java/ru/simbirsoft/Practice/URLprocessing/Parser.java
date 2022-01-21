@@ -1,6 +1,6 @@
-package ru.simbirsoft.Prictice.URLprocessing;
+package ru.simbirsoft.Practice.URLprocessing;
 
-import ru.simbirsoft.Prictice.Exception.NullPointer;
+import ru.simbirsoft.Practice.Exception.NullPointer;
 
 import java.io.IOException;
 import java.util.*;

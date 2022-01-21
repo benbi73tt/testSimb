@@ -1,4 +1,4 @@
-package ru.simbirsoft.Prictice.URLprocessing;
+package ru.simbirsoft.Practice.URLprocessing;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

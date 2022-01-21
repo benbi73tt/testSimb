@@ -1,8 +1,8 @@
-package ru.simbirsoft.Prictice.ListOfPages;
+package ru.simbirsoft.Practice.ListOfPages;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import ru.simbirsoft.Prictice.page.WebPage;
+import ru.simbirsoft.Practice.page.WebPage;
 
 import java.util.ArrayList;
 import java.util.List;

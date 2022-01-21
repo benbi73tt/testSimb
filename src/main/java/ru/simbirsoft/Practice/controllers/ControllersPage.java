@@ -1,17 +1,17 @@
-package ru.simbirsoft.Prictice.controllers;
+package ru.simbirsoft.Practice.controllers;
 
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.simbirsoft.Prictice.Exception.InvalidURL;
-import ru.simbirsoft.Prictice.Exception.NullPointer;
-import ru.simbirsoft.Prictice.ListOfPages.PagesList;
-import ru.simbirsoft.Prictice.dto.PageDTO;
-import ru.simbirsoft.Prictice.dto.PagesListDTO;
-import ru.simbirsoft.Prictice.page.WebPage;
-import ru.simbirsoft.Prictice.service.ServicePage;
+import ru.simbirsoft.Practice.Exception.InvalidURL;
+import ru.simbirsoft.Practice.Exception.NullPointer;
+import ru.simbirsoft.Practice.ListOfPages.PagesList;
+import ru.simbirsoft.Practice.dto.PageDTO;
+import ru.simbirsoft.Practice.dto.PagesListDTO;
+import ru.simbirsoft.Practice.page.WebPage;
+import ru.simbirsoft.Practice.service.ServicePage;
 
 import java.io.IOException;
 

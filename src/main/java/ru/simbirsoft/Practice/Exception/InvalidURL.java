@@ -1,4 +1,4 @@
-package ru.simbirsoft.Prictice.Exception;
+package ru.simbirsoft.Practice.Exception;
 
 public class InvalidURL extends Exception{
     public InvalidURL(String message) {

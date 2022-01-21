@@ -1,7 +1,7 @@
-package ru.simbirsoft.Prictice.dto;
+package ru.simbirsoft.Practice.dto;
 
 import lombok.Data;
-import ru.simbirsoft.Prictice.page.WebPage;
+import ru.simbirsoft.Practice.page.WebPage;
 
 @Data
 public class PageDTO {

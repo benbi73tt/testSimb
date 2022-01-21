@@ -7,9 +7,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import ru.simbirsoft.Prictice.controllers.ControllersPage;
-import ru.simbirsoft.Prictice.page.WebPage;
-import ru.simbirsoft.Prictice.service.ServicePage;
+import ru.simbirsoft.Practice.controllers.ControllersPage;
+import ru.simbirsoft.Practice.page.WebPage;
+import ru.simbirsoft.Practice.service.ServicePage;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -31,7 +31,7 @@ public class JUnitControllersPage {
     @Test
     public void getPageByIdTest() throws Exception{
         mockMvc.perform(MockMvcRequestBuilders
-                        .get("/page")
+                        .get("/pages-list/page")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
