@@ -25,7 +25,6 @@ public class ControllersPage {
 
     @GetMapping("/page")
     public PagesList pageDTO() {
-//        return BookDTO.from(servicePage.getPage());
         return PagesListDTO.from(servicePage.getPage());
     }
 
@@ -65,7 +64,7 @@ public class ControllersPage {
     @DeleteMapping("/page/{index}")
     public ResponseEntity deletePlayerByIndex(@PathVariable int index) {
         log.info("delete player by index " + index);
-        servicePage.deletePlayer(index);
+        servicePage.deletePage(index);
         return ResponseEntity.ok().build();
     }
 

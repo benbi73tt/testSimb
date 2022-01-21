@@ -1,4 +1,4 @@
-package ru.simbirsoft.Prictice;
+package ru.simbirsoft.Prictice.URLprocessing;
 
 import ru.simbirsoft.Prictice.Exception.NullPointer;
 

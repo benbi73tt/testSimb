@@ -1,14 +1,20 @@
 package ru.simbirsoft.Prictice.page;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
-//@Table(name = "webpage")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class WebPage {
     @Id
     @Column(name = "id", nullable = false)
@@ -32,57 +38,10 @@ public class WebPage {
     private int uniqueWord;
 
 
-    //сделать для uniqueword отдельную бд с колонками
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name
                 .replaceAll("http://|https://|www.|ws://|wss://","")
                 .replaceAll("/.*","")
                 .split(".com")[0];
     }
-
-    public int getCountWord() {
-        return countWord;
-    }
-
-    public void setCountWord(int countWord) {
-        this.countWord = countWord;
-    }
-
-
-
-    public int getUniqueWord() {
-        return uniqueWord;
-    }
-
-    public void setUniqueWord(int uniqueWord) {
-        this.uniqueWord = uniqueWord;
-    }
-
-
-
 }
